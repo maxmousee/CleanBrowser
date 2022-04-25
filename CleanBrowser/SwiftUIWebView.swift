@@ -304,6 +304,7 @@ public struct WebView: NSViewRepresentable {
     public func makeNSView(context: Context) -> WKWebView {
         let preferences = WKPreferences()
         preferences.isElementFullscreenEnabled = true
+        preferences.isSiteSpecificQuirksModeEnabled = true
                 
         let configuration = WKWebViewConfiguration()
         configuration.preferences = preferences
