@@ -42,10 +42,13 @@ struct ContentView: View {
                 }
             }
             Spacer()
-            Button("Go") {
+            Button(action: {
                 if let url = URL(string: address) {
                     action = .load(URLRequest(url: url))
                 }
+            }) {
+                Image(systemName: "arrow.right.circle.fill")
+                    .imageScale(.large)
             }
             Button(action: {
                 action = .reload
