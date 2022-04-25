@@ -15,7 +15,6 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
-            titleView
             navigationToolbar
             errorView
             WebView(action: $action,
@@ -25,11 +24,6 @@ struct ContentView: View {
         }
     }
     
-    private var titleView: some View {
-        Text(state.pageTitle ?? "Load a page")
-            .font(.system(size: 14))
-    }
-    
     private var navigationToolbar: some View {
         HStack(spacing: 10) {
             TextField("Address", text: $address)
@@ -37,6 +31,7 @@ struct ContentView: View {
                 if #available(iOS 14, macOS 10.15, *) {
                     ProgressView()
                         .progressViewStyle(CircularProgressViewStyle())
+                        .scaleEffect(x: 0.5, y: 0.5, anchor: .center)
                 } else {
                     Text("Loading")
                 }
