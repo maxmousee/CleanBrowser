@@ -307,6 +307,7 @@ public struct WebView: NSViewRepresentable {
                 
         let configuration = WKWebViewConfiguration()
         configuration.preferences = preferences
+        configuration.allowsAirPlayForMediaPlayback = true
         
         let webView = WKWebView(frame: CGRect.zero, configuration: configuration)
         webView.navigationDelegate = context.coordinator
